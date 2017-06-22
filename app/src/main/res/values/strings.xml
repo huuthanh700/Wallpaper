@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WallpaperHDAnime</string>
+    <string name="category_title">Category</string>
+    <string name="user_title">User Choice</string>
+    <string name="download_title">Downloaded</string>
+
+</resources>
