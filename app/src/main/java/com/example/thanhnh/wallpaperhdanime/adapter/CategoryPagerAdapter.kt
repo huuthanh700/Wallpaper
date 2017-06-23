@@ -3,6 +3,7 @@ package com.example.thanhnh.wallpaperhdanime.adapter
 import android.content.Context
 import com.example.thanhnh.wallpaperhdanime.R
 import com.example.thanhnh.wallpaperhdanime.ui.fragment.CategoryFragment
+import com.example.thanhnh.wallpaperhdanime.ui.fragment.DownloadFragment
 import com.example.thanhnh.wallpaperhdanime.ui.fragment.UserChoiceFragment
 
 /**
@@ -16,12 +17,13 @@ class CategoryPagerAdapter(fm: android.app.FragmentManager, mContext: Context) :
         when (p0) {
             0 -> fragment = CategoryFragment()
             1 -> fragment = UserChoiceFragment()
+            2 -> fragment = DownloadFragment()
         }
         return fragment
     }
 
     override fun getCount(): Int {
-        return 2
+        return 3
     }
 
     override fun getPageTitle(position: Int): CharSequence {
