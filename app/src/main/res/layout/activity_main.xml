@@ -20,47 +20,19 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/common_size_80"
+            android:layout_height="@dimen/common_size_130"
             android:background="@color/transparent_dark_blue" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/common_size_10"
-            android:layout_marginTop="@dimen/common_size_80"
-            android:background="@color/transparent_dark_blue4" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/common_size_10"
-            android:layout_marginTop="@dimen/common_size_90"
-            android:background="@color/transparent_dark_blue3" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/common_size_10"
-            android:layout_marginTop="@dimen/common_size_100"
-            android:background="@color/transparent_dark_blue3" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/common_size_10"
-            android:layout_marginTop="@dimen/common_size_110"
-            android:background="@color/transparent_dark_blue2" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/common_size_10"
-            android:layout_marginTop="@dimen/common_size_120"
-            android:background="@color/transparent_dark_blue2" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/common_size_130"
-            android:gravity="center"
+            android:fontFamily="@font/text_me_one"
+            android:gravity="center_horizontal"
             android:paddingLeft="@dimen/common_size_10"
+            android:paddingTop="@dimen/common_size_70"
             android:text="Anime Wallpaper HD"
             android:textColor="@color/white"
-            android:textSize="@dimen/common_text_size_17"
+            android:textSize="@dimen/common_text_size_18"
             android:textStyle="bold" />
     </RelativeLayout>
 

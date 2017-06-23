@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SearchTheme" parent="Widget.AppCompat.Light.SearchView">
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="searchHintIcon">@drawable/ic_search</item>
+        <item name="closeIcon">@drawable/ic_close</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

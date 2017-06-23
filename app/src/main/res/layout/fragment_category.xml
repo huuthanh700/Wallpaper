@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layoutSearch"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/common_size_1"-->
+        <!--android:background="@color/dark_blue"-->
+        <!--android:padding="@dimen/common_size_1">-->
+
+        <!--<android.support.v7.widget.SearchView-->
+            <!--android:id="@+id/searchView"-->
+            <!--style="@style/SearchTheme"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/common_size_40"-->
+            <!--android:background="@drawable/custom_searchview"></android.support.v7.widget.SearchView>-->
+
+    <!--</LinearLayout>-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerCategory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"></android.support.v7.widget.RecyclerView>
-
-</LinearLayout>
+        ></android.support.v7.widget.RecyclerView>
+</RelativeLayout>
