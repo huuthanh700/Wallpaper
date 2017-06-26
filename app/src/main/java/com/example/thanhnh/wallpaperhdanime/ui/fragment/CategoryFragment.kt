@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.example.thanhnh.wallpaperhdanime.R
 import com.example.thanhnh.wallpaperhdanime.adapter.RecyclerCategoryAdapter
-import com.example.thanhnh.wallpaperhdanime.model.CategoryAnime
+import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import com.example.thanhnh.wallpaperhdanime.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_category.*
 
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_category.*
  */
 class CategoryFragment : BaseFragment() {
     override fun onCreateContentView(rootView: View?, savedInstanceState: Bundle?) {
-//        init()
+
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

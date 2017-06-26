@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.thanhnh.wallpaperhdanime.R
-import com.example.thanhnh.wallpaperhdanime.model.CategoryAnime
+import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import kotlinx.android.synthetic.main.item_list_category.view.*
 
 /**

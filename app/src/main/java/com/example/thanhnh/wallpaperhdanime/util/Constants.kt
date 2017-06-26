@@ -3,8 +3,8 @@ package com.example.thanhnh.wallpaperhdanime.util
 /**
  * Created by ThanhNH on 6/22/2017.
  */
-class FragmetTag {
+class Constants {
     companion object {
-        val CATEGORY_TAG: String = "category_fragment"
+        val WALLPAPER_KEY: String = "category_fragment"
     }
 }

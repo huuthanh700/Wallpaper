@@ -23,6 +23,14 @@
             android:layout_height="@dimen/common_size_130"
             android:background="@color/transparent_dark_blue" />
 
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchView"
+            style="@style/SearchTheme"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_size_40"
+            android:layout_marginTop="@dimen/common_size_5"
+            app:paddingStart="@dimen/common_size_10"></android.support.v7.widget.SearchView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/common_size_130"

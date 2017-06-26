@@ -12,6 +12,6 @@
         <item name="searchIcon">@drawable/ic_search</item>
         <item name="searchHintIcon">@drawable/ic_search</item>
         <item name="closeIcon">@drawable/ic_close</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="queryBackground">@drawable/custom_searchview</item>
     </style>
 </resources>
