@@ -2,15 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/common_size_200"
-    android:paddingTop="@dimen/common_size_1"
+    android:gravity="center"
     android:paddingBottom="@dimen/common_size_1"
-    android:gravity="center">
+    android:paddingTop="@dimen/common_size_1">
 
     <ImageView
         android:id="@+id/imgWallpaper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/item_image3"/>
+        android:src="@drawable/item_image3" />
 
     <View
         android:layout_width="match_parent"

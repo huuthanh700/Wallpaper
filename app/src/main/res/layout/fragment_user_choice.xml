@@ -7,6 +7,5 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerChoice"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/common_size_1"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 </LinearLayout>

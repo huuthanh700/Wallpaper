@@ -1,11 +1,12 @@
 package com.example.thanhnh.wallpaperhdanime.ui.base
 
-import android.app.Fragment
 import android.os.Bundle
+import android.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.thanhnh.wallpaperhdanime.R
+
 
 /**
  * Created by ThanhNH on 6/22/2017.
@@ -36,6 +37,5 @@ abstract class BaseFragment : Fragment() {
     protected fun getTitle(): String {
         return getString(R.string.app_name)
     }
-
-
 }
+

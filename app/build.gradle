@@ -7,7 +7,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.example.thanhnh.wallpaperhdanime"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -35,6 +35,11 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$DVE"
     compile "com.android.support:transition:$DVE"
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.google.firebase:firebase-auth:11.0.1'
+    compile 'com.google.firebase:firebase-database:11.0.1'
+
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }
+apply plugin: 'com.google.gms.google-services'

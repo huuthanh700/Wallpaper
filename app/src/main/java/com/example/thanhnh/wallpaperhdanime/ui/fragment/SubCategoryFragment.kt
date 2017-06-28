@@ -7,19 +7,17 @@ import android.view.View
 import com.example.thanhnh.wallpaperhdanime.R
 import com.example.thanhnh.wallpaperhdanime.adapter.RecyclerUserChoiceAdapter
 import com.example.thanhnh.wallpaperhdanime.data.listener.OnRecyclerChoiceItemClickListener
+import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import com.example.thanhnh.wallpaperhdanime.data.model.WallpaperAnime
 import com.example.thanhnh.wallpaperhdanime.ui.base.BaseFragment
 import com.example.thanhnh.wallpaperhdanime.util.Constants
-import kotlinx.android.synthetic.main.fragment_user_choice.*
+import kotlinx.android.synthetic.main.fragment_sub_category.*
 
-/**
- * Created by ThanhNH on 6/22/2017.
- */
-class UserChoiceFragment : BaseFragment() {
-    var recyclerChoiceAdapter: RecyclerUserChoiceAdapter? = null
+class SubCategoryFragment : BaseFragment() {
+    var recyclerSubCateAdapter: RecyclerUserChoiceAdapter? = null
     var imageDetailFrag: ImageDetailFragment = ImageDetailFragment()
-
-
+    var bundle: Bundle? = null
+    var categoryAnime: CategoryAnime? = null
     override fun onCreateContentView(rootView: View?, savedInstanceState: Bundle?) {
 
     }
@@ -30,19 +28,19 @@ class UserChoiceFragment : BaseFragment() {
     }
 
     override fun getFragmentLayoutId(): Int {
-        return R.layout.fragment_user_choice
+        return R.layout.fragment_sub_category
     }
 
-    private fun init() {
-        recyclerChoice.layoutManager = GridLayoutManager(activity, 3) as RecyclerView.LayoutManager?
-        recyclerChoice.setHasFixedSize(true)
-        recyclerChoiceAdapter = RecyclerUserChoiceAdapter(activity, getList())
-        recyclerChoice.adapter = recyclerChoiceAdapter
-        recyclerChoiceAdapter?.setOnRecyclerItemClick(object : OnRecyclerChoiceItemClickListener {
+    fun init() {
+        bundle = arguments
+        categoryAnime = bundle?.getSerializable(Constants.CATEGORY_ANIME_KEY) as CategoryAnime
+        tvCategoryName.text = categoryAnime?.mNameCategory
+        recyclerSubCate.layoutManager = GridLayoutManager(activity, 3) as RecyclerView.LayoutManager?
+        recyclerSubCate.setHasFixedSize(true)
+        recyclerSubCateAdapter = RecyclerUserChoiceAdapter(activity, getList())
+        recyclerSubCate.adapter = recyclerSubCateAdapter
+        recyclerSubCateAdapter?.setOnRecyclerItemClick(object : OnRecyclerChoiceItemClickListener {
             override fun onRecyclerItemClick(wallpaperAnime: WallpaperAnime) {
-//                intent = Intent(activity, ImageDetailFragment::class.java)
-//                intent?.putExtra(WALLPAPER_KEY, wallpaperAnime)
-//                startActivity(intent)
                 var bundle: Bundle? = Bundle()
                 bundle?.putSerializable(Constants.WALLPAPER_KEY, wallpaperAnime)
                 imageDetailFrag.arguments = bundle
