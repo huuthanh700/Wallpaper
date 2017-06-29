@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "136331859263",
+    "firebase_url": "https://anime-hd-wallpapers-d713f.firebaseio.com",
+    "project_id": "anime-hd-wallpapers-d713f",
+    "storage_bucket": "anime-hd-wallpapers-d713f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136331859263:android:40a4e02efdecbb91",
+        "android_client_info": {
+          "package_name": "self.yue.animehdwallpapers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136331859263-258gt1gmgcp6vc8nei4vmisftf2s6hh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSwjqssoA9Mu5tFQSSiuQP-334gwnmbP0"
+        },
+        {
+          "current_key": "AIzaSyBPJXKre8OihXKctxe0y6RxnB6GAXUrVac"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136331859263:android:52166029003f2ec9",
+        "android_client_info": {
+          "package_name": "com.example.thanhnh.wallpaperhdanime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136331859263-258gt1gmgcp6vc8nei4vmisftf2s6hh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSwjqssoA9Mu5tFQSSiuQP-334gwnmbP0"
+        },
+        {
+          "current_key": "AIzaSyBPJXKre8OihXKctxe0y6RxnB6GAXUrVac"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

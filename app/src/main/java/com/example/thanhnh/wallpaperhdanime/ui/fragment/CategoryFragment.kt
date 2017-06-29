@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.example.thanhnh.wallpaperhdanime.R
 import com.example.thanhnh.wallpaperhdanime.adapter.RecyclerCategoryAdapter
+import com.example.thanhnh.wallpaperhdanime.data.FirebaseUlti
 import com.example.thanhnh.wallpaperhdanime.data.listener.OnRecyclerCategoryItemClickListener
 import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import com.example.thanhnh.wallpaperhdanime.ui.base.BaseFragment
@@ -45,13 +46,7 @@ class CategoryFragment : BaseFragment() {
         })
     }
 
-    fun getList(): ArrayList<CategoryAnime> {
-        var list = ArrayList<CategoryAnime>()
-        list.add(CategoryAnime(1, "Naruto", 360, "url"))
-        list.add(CategoryAnime(2, "One Piece", 330, "url"))
-        list.add(CategoryAnime(3, "Death Note", 270, "url"))
-        list.add(CategoryAnime(4, "One Punch Man", 145, "url"))
-        list.add(CategoryAnime(5, "Marvel Comic", 193, "url"))
-        return list
+    fun getList(): List<CategoryAnime>? {
+        return FirebaseUlti.getListCategory()
     }
 }

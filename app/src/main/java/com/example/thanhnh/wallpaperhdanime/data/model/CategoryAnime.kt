@@ -5,4 +5,4 @@ import java.io.Serializable
 /**
  * Created by ThanhNH on 6/23/2017.
  */
-data class CategoryAnime(var id: Int, var mNameCategory: String, var mTotalImage: Int, var mBackGroundUrl: String) : Serializable
+data class CategoryAnime(var mNameCategory: String, var mTotalImage: String, var mBackGroundUrl: String, var mContent: String) : Serializable

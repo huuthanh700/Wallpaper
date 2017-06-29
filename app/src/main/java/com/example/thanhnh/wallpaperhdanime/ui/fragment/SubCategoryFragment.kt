@@ -3,6 +3,7 @@ package com.example.thanhnh.wallpaperhdanime.ui.fragment
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.View
 import com.example.thanhnh.wallpaperhdanime.R
 import com.example.thanhnh.wallpaperhdanime.adapter.RecyclerUserChoiceAdapter
@@ -11,7 +12,12 @@ import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import com.example.thanhnh.wallpaperhdanime.data.model.WallpaperAnime
 import com.example.thanhnh.wallpaperhdanime.ui.base.BaseFragment
 import com.example.thanhnh.wallpaperhdanime.util.Constants
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.storage.FileDownloadTask
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_sub_category.*
+import java.io.File
+
 
 class SubCategoryFragment : BaseFragment() {
     var recyclerSubCateAdapter: RecyclerUserChoiceAdapter? = null
@@ -35,6 +41,8 @@ class SubCategoryFragment : BaseFragment() {
         bundle = arguments
         categoryAnime = bundle?.getSerializable(Constants.CATEGORY_ANIME_KEY) as CategoryAnime
         tvCategoryName.text = categoryAnime?.mNameCategory
+
+
         recyclerSubCate.layoutManager = GridLayoutManager(activity, 3) as RecyclerView.LayoutManager?
         recyclerSubCate.setHasFixedSize(true)
         recyclerSubCateAdapter = RecyclerUserChoiceAdapter(activity, getList())
@@ -64,4 +72,22 @@ class SubCategoryFragment : BaseFragment() {
         list.add(WallpaperAnime(11, "Marvel Comic", 573, "http://www.hdiphonewallpapers.us/phone-wallpapers/iphone-6s-wallpaper-1-1080x1920/iphone-6s-wallpaper-HD-164imu7g-1080x1920.jpg"))
         return list
     }
+
+//    fun getJsonfromFirebase() {
+//        val storage = FirebaseStorage.getInstance()
+//        val storageRef = storage.getReferenceFromUrl(categoryAnime?.mContent as String).child("android.jpg")
+//
+//        val localFile: File = File.createTempFile("anime", "json")
+//        storageRef.getFile(localFile).addOnSuccessListener {
+//            object : OnSuccessListener<FileDownloadTask.TaskSnapshot> {
+//                override fun onSuccess(p0: FileDownloadTask.TaskSnapshot?) {
+//                    var test: String = localFile.absolutePath
+//                    Log.e("test", test)
+//                }
+//
+//            }
+//        }
+//
+//    }
+
 }
