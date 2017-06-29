@@ -1,16 +1,16 @@
 package com.example.thanhnh.wallpaperhdanime.data
 
+import android.util.Log
 import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import com.example.thanhnh.wallpaperhdanime.util.Constants
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.database.*
+import com.google.firebase.storage.FileDownloadTask
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import android.support.annotation.NonNull
-
-
+import java.io.File
 
 
 /**
@@ -55,6 +55,22 @@ open class FirebaseUlti {
                         }
                     })
             return listCategory
+        }
+
+        fun getJsonfromFirebase(categoryAnime: CategoryAnime) {
+            val storage = FirebaseStorage.getInstance()
+            val storageRef = storage.getReferenceFromUrl(categoryAnime?.mContent)
+
+            val localFile: File = File.createTempFile("anime", "json")
+//            var task:FileDownloadTask = storageRef.getFile(localFile).addOnSuccessListener { OnSuccessListener<FileDownloadTask.TaskSnapshot> {  } }
+//            Tasks.await(task)
+
+            storageRef.getFile(localFile).addOnSuccessListener {
+                OnSuccessListener<FileDownloadTask.TaskSnapshot> {
+                    //process download file
+                }
+            }
+
         }
     }
 }

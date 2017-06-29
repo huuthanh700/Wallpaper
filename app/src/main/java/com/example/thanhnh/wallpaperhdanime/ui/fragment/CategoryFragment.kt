@@ -24,11 +24,16 @@ class CategoryFragment : BaseFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
+
     }
 
     override fun getFragmentLayoutId(): Int {
         return R.layout.fragment_category
+    }
+
+    override fun onResume() {
+        super.onResume()
+        init()
     }
 
     fun init() {

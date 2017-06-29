@@ -73,21 +73,6 @@ class SubCategoryFragment : BaseFragment() {
         return list
     }
 
-//    fun getJsonfromFirebase() {
-//        val storage = FirebaseStorage.getInstance()
-//        val storageRef = storage.getReferenceFromUrl(categoryAnime?.mContent as String).child("android.jpg")
-//
-//        val localFile: File = File.createTempFile("anime", "json")
-//        storageRef.getFile(localFile).addOnSuccessListener {
-//            object : OnSuccessListener<FileDownloadTask.TaskSnapshot> {
-//                override fun onSuccess(p0: FileDownloadTask.TaskSnapshot?) {
-//                    var test: String = localFile.absolutePath
-//                    Log.e("test", test)
-//                }
-//
-//            }
-//        }
-//
-//    }
+
 
 }
