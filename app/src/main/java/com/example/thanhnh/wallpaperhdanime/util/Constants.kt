@@ -12,6 +12,7 @@ class Constants {
 
 
         /*Key firebase*/
+        val BASE_STORAGE_LOCATION: String = "gs://anime-hd-wallpapers-d713f.appspot.com/"
         val KEY_CATEGORY_NAME: String = "name"
         val KEY_CATEGORY_TOTAL: String = "total"
         val KEY_CATEGORY_CONTENT: String = "content"

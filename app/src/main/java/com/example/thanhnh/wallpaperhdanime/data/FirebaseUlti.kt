@@ -2,15 +2,16 @@ package com.example.thanhnh.wallpaperhdanime.data
 
 import android.util.Log
 import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
+import com.example.thanhnh.wallpaperhdanime.data.model.WallpaperAnime
 import com.example.thanhnh.wallpaperhdanime.util.Constants
-import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
-import com.google.android.gms.tasks.Tasks
 import com.google.firebase.database.*
 import com.google.firebase.storage.FileDownloadTask
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.io.File
+import java.io.FileReader
 
 
 /**
@@ -37,17 +38,7 @@ open class FirebaseUlti {
                                         , node.child(Constants.KEY_CATEGORY_COVER).getValue().toString(), node.child(Constants.KEY_CATEGORY_CONTENT).getValue().toString())
                                 listCategory?.add(categoryAnime)
                             }
-
-                            /*Firebase storage*/
-                            val storage = FirebaseStorage.getInstance()
-                            var gsStoreRef: StorageReference = storage?.getReferenceFromUrl(listCategory?.get(1)?.mContent as String)
-                            val ONE_MEGABYTE = (1024 * 1024).toLong()
-                            gsStoreRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(OnSuccessListener<ByteArray> {
-                                // Data for "images/island.jpg" is returns, use this as needed
-                            }).addOnFailureListener(OnFailureListener {
-                                // Handle any errors
-                            })
-
+                            getJsonfromFirebase()
                         }
 
                         override fun onCancelled(p0: DatabaseError?) {
@@ -57,20 +48,36 @@ open class FirebaseUlti {
             return listCategory
         }
 
-        fun getJsonfromFirebase(categoryAnime: CategoryAnime) {
+        fun getJsonfromFirebase() {
             val storage = FirebaseStorage.getInstance()
-            val storageRef = storage.getReferenceFromUrl(categoryAnime?.mContent)
-
+            val storageRef = storage.getReferenceFromUrl(Constants.BASE_STORAGE_LOCATION).child("naruto_wallpapers.json")
             val localFile: File = File.createTempFile("anime", "json")
-//            var task:FileDownloadTask = storageRef.getFile(localFile).addOnSuccessListener { OnSuccessListener<FileDownloadTask.TaskSnapshot> {  } }
-//            Tasks.await(task)
-
             storageRef.getFile(localFile).addOnSuccessListener {
                 OnSuccessListener<FileDownloadTask.TaskSnapshot> {
                     //process download file
+                    readData(localFile)
+                    Log.e("firebase :", "success")
                 }
-            }
+            }.addOnFailureListener({
+                Log.e("firebase :", "fail")
+            })
+        }
 
+        fun readData(localFile: File): MutableList<WallpaperAnime> {
+            var data: MutableList<WallpaperAnime> = mutableListOf()
+            try {
+                val gson = Gson()
+                var file = FileReader(localFile)
+                data = gson.fromJson<MutableList<WallpaperAnime>>(file,
+                        object : TypeToken<MutableList<WallpaperAnime>>() {
+                        }.type
+                )
+                file.close()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
+            return data
         }
     }
 }
+
