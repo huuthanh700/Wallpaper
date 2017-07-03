@@ -17,7 +17,7 @@ import java.io.FileReader
 /**
  * Created by ThanhNH on 6/29/2017.
  */
-open class FirebaseUlti {
+open class FirebaseUtil {
     companion object {
         //Firebase
         var database: FirebaseDatabase? = null
@@ -38,7 +38,7 @@ open class FirebaseUlti {
                                         , node.child(Constants.KEY_CATEGORY_COVER).getValue().toString(), node.child(Constants.KEY_CATEGORY_CONTENT).getValue().toString())
                                 listCategory?.add(categoryAnime)
                             }
-                            getJsonfromFirebase()
+//                            getJsonfromFirebase()
                         }
 
                         override fun onCancelled(p0: DatabaseError?) {
@@ -55,7 +55,7 @@ open class FirebaseUlti {
             storageRef.getFile(localFile).addOnSuccessListener {
                 OnSuccessListener<FileDownloadTask.TaskSnapshot> {
                     //process download file
-                    readData(localFile)
+//                    readData(localFile)
                     Log.e("firebase :", "success")
                 }
             }.addOnFailureListener({
