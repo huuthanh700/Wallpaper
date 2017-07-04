@@ -1,12 +1,11 @@
 package com.example.thanhnh.wallpaperhdanime.data
 
+import android.content.Context
 import android.util.Log
 import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
 import com.example.thanhnh.wallpaperhdanime.data.model.WallpaperAnime
 import com.example.thanhnh.wallpaperhdanime.util.Constants
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.database.*
-import com.google.firebase.storage.FileDownloadTask
 import com.google.firebase.storage.FirebaseStorage
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -48,17 +47,25 @@ open class FirebaseUtil {
             return listCategory
         }
 
-        fun getJsonfromFirebase() {
+        fun getJsonfromFirebase(context: Context, childPath: String) {
+            val fileName: String = "anime.json"
+            val cDir = context.getCacheDir()
+            val cachingFolder = File(cDir.getPath())
+            cachingFolder.mkdirs()
+
+            val localFile: File = File(cachingFolder, fileName)
+
             val storage = FirebaseStorage.getInstance()
-            val storageRef = storage.getReferenceFromUrl(Constants.BASE_STORAGE_LOCATION).child("naruto_wallpapers.json")
-            val localFile: File = File.createTempFile("anime", "json")
-            storageRef.getFile(localFile).addOnSuccessListener {
-                OnSuccessListener<FileDownloadTask.TaskSnapshot> {
-                    //process download file
-//                    readData(localFile)
-                    Log.e("firebase :", "success")
-                }
-            }.addOnFailureListener({
+            val storageRef = storage.getReference().child(childPath)
+
+//            val storageRef = storage.getReference().child("naruto_wallpapers.json")
+//            val storageRef = storage.getReferenceFromUrl(Constants.BASE_STORAGE_LOCATION).child("naruto_wallpapers.json")
+
+            storageRef.getFile(localFile).addOnSuccessListener({
+                //process download file
+                readData(localFile)
+                Log.e("firebase :", "success" + localFile.path)
+            }).addOnFailureListener({
                 Log.e("firebase :", "fail")
             })
         }

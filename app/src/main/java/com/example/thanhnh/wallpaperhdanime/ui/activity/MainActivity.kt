@@ -24,7 +24,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
-        FirebaseUtil.getJsonfromFirebase()
+        FirebaseUtil.getJsonfromFirebase(this,"naruto_wallpapers.json")
     }
 
     override fun getActivityLayoutId(): Int {
