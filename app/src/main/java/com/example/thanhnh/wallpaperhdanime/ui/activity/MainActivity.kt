@@ -8,9 +8,6 @@ import com.example.thanhnh.wallpaperhdanime.R
 import com.example.thanhnh.wallpaperhdanime.adapter.CategoryPagerAdapter
 import com.example.thanhnh.wallpaperhdanime.data.FirebaseUtil
 import com.example.thanhnh.wallpaperhdanime.ui.base.BaseActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,7 +21,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
-        FirebaseUtil.getJsonfromFirebase(this,"naruto_wallpapers.json")
+        FirebaseUtil.getJsonfromFirebase(this, "naruto_wallpapers.json")
     }
 
     override fun getActivityLayoutId(): Int {
@@ -48,12 +45,5 @@ class MainActivity : BaseActivity() {
         /*animate searchbar of searchview*/
         searchBar = searchView.findViewById(android.support.v7.appcompat.R.id.search_bar)
         searchBar?.layoutTransition = LayoutTransition()
-
-//        mFireBaseAuth = FirebaseAuth.getInstance()
-//        mFireBaseAuth?.signInAnonymously()?.addOnCompleteListener(this, object : OnCompleteListener<AuthResult> {
-//            override fun onComplete(p0: Task<AuthResult>) {
-//
-//            }
-//        })
     }
 }

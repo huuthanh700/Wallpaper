@@ -3,14 +3,11 @@ package com.example.thanhnh.wallpaperhdanime.data
 import android.content.Context
 import android.util.Log
 import com.example.thanhnh.wallpaperhdanime.data.model.CategoryAnime
-import com.example.thanhnh.wallpaperhdanime.data.model.WallpaperAnime
 import com.example.thanhnh.wallpaperhdanime.util.Constants
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import java.io.File
-import java.io.FileReader
+import java.util.*
 
 
 /**
@@ -70,19 +67,21 @@ open class FirebaseUtil {
             })
         }
 
-        fun readData(localFile: File): MutableList<WallpaperAnime> {
-            var data: MutableList<WallpaperAnime> = mutableListOf()
-            try {
-                val gson = Gson()
-                var file = FileReader(localFile)
-                data = gson.fromJson<MutableList<WallpaperAnime>>(file,
-                        object : TypeToken<MutableList<WallpaperAnime>>() {
-                        }.type
-                )
-                file.close()
-            } catch (ex: Exception) {
-                ex.printStackTrace()
-            }
+        fun readData(localFile: File): String {
+            val data: String = Scanner(File(localFile.path)).useDelimiter("\\Z").next()
+            Log.e("data", data)
+//            var data: MutableList<WallpaperAnime> = mutableListOf()
+//            try {
+//                val gson = Gson()
+//                var file = FileReader(localFile)
+//                data = gson.fromJson<MutableList<WallpaperAnime>>(file,
+//                        object : TypeToken<MutableList<WallpaperAnime>>() {
+//                        }.type
+//                )
+//                file.close()
+//            } catch (ex: Exception) {
+//                ex.printStackTrace()
+//            }
             return data
         }
     }
