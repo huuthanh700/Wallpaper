@@ -2,14 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clickable="true"
     android:orientation="vertical">
 
-    <ImageView
+    <com.gjiazhe.panoramaimageview.PanoramaImageView
         android:id="@+id/imgWallpaper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/item_image" />
+        android:src="@drawable/item_image"
+        app:piv_enablePanoramaMode="true"
+        app:piv_show_scrollbar="true"
+        app:piv_invertScrollDirection="false"/>
 
     <TextView
         android:id="@+id/tvImageName"

@@ -1,5 +1,8 @@
 package com.example.thanhnh.wallpaperhdanime.ui.base
 
+import android.app.Dialog
+import android.app.ProgressDialog
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.thanhnh.wallpaperhdanime.R
@@ -8,13 +11,11 @@ import com.example.thanhnh.wallpaperhdanime.R
  * Created by ThanhNH on 6/22/2017.
  */
 abstract class BaseActivity : AppCompatActivity() {
+    var progressDialog : Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        if (savedInstanceState == null) addFragment()
         setContentView(getActivityLayoutId())
     }
-
-//    protected abstract fun getFragment(): BaseFragment
 
     protected abstract fun getActivityLayoutId(): Int
 
@@ -25,11 +26,6 @@ abstract class BaseActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-
-//    fun addFragment() {
-//        val transaction = fragmentManager.beginTransaction()
-//        transaction.add(R.id.fragment_container, getFragment()).commit()
-//    }
 
     fun replaceFragment(fragment: BaseFragment, tag: String) {
         val transaction = fragmentManager.beginTransaction()
@@ -48,5 +44,17 @@ abstract class BaseActivity : AppCompatActivity() {
             return fragmentManager.findFragmentById(R.id.fragment_container) as BaseFragment
         }
         return null
+    }
+
+    fun showDialog(content:String){
+        if (progressDialog !=null && progressDialog!!.isShowing) {
+            return
+        }
+        progressDialog = ProgressDialog.show(this,"", content)
+    }
+    fun dismissDialog(){
+        if (progressDialog!=null && progressDialog!!.isShowing){
+            progressDialog?.dismiss()
+        }
     }
 }

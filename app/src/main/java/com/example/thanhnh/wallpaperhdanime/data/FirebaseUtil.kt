@@ -30,7 +30,7 @@ open class FirebaseUtil {
                             var nodes: Iterator<DataSnapshot> = p0?.children?.iterator()!!
                             while (nodes.hasNext()) {
                                 var node: DataSnapshot = nodes.next()
-                                var categoryAnime: CategoryAnime = CategoryAnime(node.child(Constants.KEY_CATEGORY_NAME).getValue().toString(), node.child(Constants.KEY_CATEGORY_TOTAL).getValue().toString()
+                                var categoryAnime = CategoryAnime(node.child(Constants.KEY_CATEGORY_NAME).getValue().toString(), node.child(Constants.KEY_CATEGORY_TOTAL).getValue().toString()
                                         , node.child(Constants.KEY_CATEGORY_COVER).getValue().toString(), node.child(Constants.KEY_CATEGORY_CONTENT).getValue().toString())
                                 listCategory?.add(categoryAnime)
                             }
